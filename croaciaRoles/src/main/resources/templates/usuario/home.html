@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>HOME USER</h1>
+
+    <div th:if="${exitoMensaje}">
+        <p th:text="${exitoMensaje}"></p>
+    </div>
+
+    <div th:if="${errorMensaje}">
+        <p th:text="${errorMensaje}"></p>
+    </div>
+</body>
+</html>

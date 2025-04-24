@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Registro de Usuarios</h2>
+
+<form th:action="@{/registro}" th:object="${usuario}" method="post">
+
+    <input type="text" th:field="*{username}" placeholder="Usuario" autocomplete="off"><br>
+    <input type="password" th:field="*{password}" placeholder="Contraseña" autocomplete="off"><br>
+    <button type="submit">Guardar</button>
+
+
+
+</form>
+</body>
+</html>

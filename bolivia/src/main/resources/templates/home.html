@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{partials/head :: head}"></head>
+<body>
+
+<div th:insert="~{partials/nav :: nav}">
+
+</div>
+
+<h1>HOME</h1>
+
+<div th:if="${success != null}">
+    <h2 th:text="${success}"></h2>
+</div>
+
+
+
+</body>
+</html>

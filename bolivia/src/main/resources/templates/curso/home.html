@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{partials/head :: head}"></head>
+<body>
+
+
+<div th:insert="~{partials/nav :: nav}"></div>
+
+
+<div class="container">
+    <div class="row w-100">
+        <div class="col-12">
+
+            <div class="my-2">
+
+                <div th:if="${success != null}">
+                    <div class="alert alert-success">
+                    <span th:text="${success}"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <h1 class="mt-4 text-center">Lista de Cursos</h1>
+            <div class="my-5">
+                <a class="btn btn-success" th:href="@{/curso/form}">Guardar Curso</a>
+            </div>
+
+            <table class="table table-striped">
+
+                <thead>
+                <tr>
+                    <th>#ID</th>
+                    <th>Curso</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="curso : ${cursos}">
+                    <td th:text="${curso.id}"></td>
+                    <td th:text="${curso.nombre}"></td>
+                    <td>
+
+                        <a th:href="@{/curso/detalles/{id}(id=${curso.id})}">Ver</a>
+                    </td>
+
+                </tr>
+                </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

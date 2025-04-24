@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    <ul th:each="i: ${customers}">
+        <li th:text="${i.id}"></li>
+        <li th:text="${i.nombre}"></li>
+        <li th:text="${i.email}"></li>
+        <li th:text="${i.apellidoUno}"></li>
+        <li th:text="${i.apellidoDos}"></li>
+    </ul>
+-->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="i: ${customers}">
+        <td th:text="${i.id}"></td>
+        <td th:text="${i.nombre}"></td>
+        <td th:text="${i.email}"></td>
+        <td th:text="${i.apellidoUno}"></td>
+        <td th:text="${i.apellidoDos}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

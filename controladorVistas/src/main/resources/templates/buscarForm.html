@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Buscar por Nombre o Primer Apellido</h2>
+    <form th:action="@{/buscar/por-nombre}" method="get">
+        <input type="text" name="nombreForm" placeholder="Nombre" autocomplete="off"><br>
+        <button type="submit">Buscar por Nombre</button>
+    </form>
+<form th:action="@{/buscar/por-apellidoUno}" method="get">
+    <input type="text" name="apellidoUno" placeholder="Primer Apellido" autocomplete="off"><br>
+    <button type="submit">Buscar por Primer Apellido</button>
+</form>
+<hr>
+<form th:action="@{/buscar/por-nombre-o-apellido}" method="get">
+    <input type="text" name="dato" placeholder="Nombre o Primer Apellido" autocomplete="off"><br>
+    <button type="submit">Buscar</button>
+</form>
+<hr>
+
+<form th:action="@{/buscar/por-nombre-y-apellido}" method="get">
+    <input type="text" name="nombre" placeholder="Nombre" autocomplete="off"><br>
+    <input type="text" name="apellidoUno" placeholder="Primer Apellido" autocomplete="off"><br>
+    <button type="submit">Buscar</button>
+</form>
+<hr>
+
+<div th:if="${clientes != null and clientes.size() > 0}">
+
+    <ul th:each="i : ${clientes}">
+        <li th:text="${i.nombre}+' '+${i.apellidoUno}+' '+${i.apellidoDos}+' '+${i.email}"></li>
+    </ul>
+
+</div>
+
+<div th:if="${clientes == null or clientes.size() ==0}">
+    <p>No hay clientes que mostrar</p>
+</div>
+</body>
+</html>

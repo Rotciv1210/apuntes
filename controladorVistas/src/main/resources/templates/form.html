@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+</head>
+<body>
+
+<div th:insert="~{fragments/nav :: menu}"></div>
+
+    <form th:action="@{/cliente/guardar}" th:object="${cliente}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        <input type="text" th:field="*{nombre}" placeholder="Nombre" autocomplete="off"><br>
+        <input type="text" th:field="*{apellidoUno}" placeholder="Primer Apellido" autocomplete="off"><br>
+        <input type="text" th:field="*{apellidoDos}" placeholder="Segundo Apellido" autocomplete="off"><br>
+        <input type="text" th:field="*{email}" placeholder="Email" autocomplete="off"><br>
+        <button type="submit">
+            <span th:text="${textoBoton}"></span>
+        </button>
+    </form>
+</body>
+</html>

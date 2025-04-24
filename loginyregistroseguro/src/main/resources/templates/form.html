@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<h1>Alta de usuarios</h1>
+<form th:action="@{/guardar}" th:object="${usuario}" method="post">
+<input type="text" th:field="*{username}" placeholder="Usuario" autocomplete="off">
+<input type="text" th:field="*{password}" placeholder="Contraseña" autocomplete="off">
+<button type="submit">Guardar</button>
+
+</form>
+
+</body>
+</html>

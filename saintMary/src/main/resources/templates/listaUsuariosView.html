@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Lista Usuarios</title>
+</head>
+<body>
+<!--Iteramos la lista-->
+<!--
+  <ul th:each="i: ${listaUsuarios}">
+    <li th:text="${i.id}"></li>
+    <li th:text="${i.username}"></li>
+    <li th:text="${i.email}"></li>
+  </ul>
+-->
+<h1>Lista Usuarios</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Usuario</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr th:each="i: ${listaUsuarios}">
+        <td th:text="${i.id}"></td>
+        <td th:text="${i.username}"></td>
+        <td th:text="${i.email}"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

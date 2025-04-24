@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{partials/head :: head}"></head>
+</head>
+<body>
+<div th:insert="~{partials/nav :: nav}">
+
+</div>
+  <h2 class="mt-5 text-center">Asignar Perfil</h2>
+<div class="container m-auto">
+    <div class="row">
+        <div class="col-4">
+<div class="card p-2 w-50">
+<form th:action="@{/perfil/guardar}" th:object="${perfil}" method="post">
+<input type="text" th:field="*{url}" placeholder="URL" autocomplete="off" class="form-control"><br>
+  <input type="text" th:field="*{descripcion}" placeholder="Descripcion" autocomplete="off" class="form-control"><br>
+  <select class="form-select" th:field="*{usuario}">
+    <option value="">Seleccionar usuario</option>
+    <option
+            th:each="i: ${usuarios}"
+            th:value="${i.id}"
+            th:text="${i.username}"></option>
+  </select><br>
+  <button class="btn btn-primary" type="submit">Guardar Perfil</button>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

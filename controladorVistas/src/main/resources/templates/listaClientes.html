@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div th:insert="~{fragments/nav :: menu}"></div>
+
+<h1>Lista de clientes</h1>
+
+    <div th:if="${success != null}">
+        <h2 th:text="${success}"></h2>
+    </div>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="i: ${lista}">
+        <td th:text="${i.id}"></td>
+        <td th:text="${i.nombre}"></td>
+        <td th:text="${i.email}"></td>
+        <td th:text="${i.apellidoUno}"></td>
+        <td th:text="${i.apellidoDos}"></td>
+        <td>
+            <button>
+                <a th:href="@{/cliente/{id}(id=${i.id})}">Detalles</a>
+            </button>
+
+            <button>
+                <a th:href="@{/cliente/eliminar/{id}(id=${i.id})}">Eliminar</a>
+            </button>
+
+            <button>
+                <a th:href="@{/cliente/modificar/{id}(id=${i.id})}">Modificar</a>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

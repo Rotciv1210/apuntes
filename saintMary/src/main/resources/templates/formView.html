@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>FormView</title>
+</head>
+<body>
+
+    <form th:action="@{/login}" method="get">
+        <input type="text" name="username" placeholder="Usuario" autocomplete="off"><br>
+        <input type="password" name="password" placeholder="Contraseña" autocomplete="off"><br>
+        <button type="submit">Log In</button>
+    </form>
+
+</body>
+</html>

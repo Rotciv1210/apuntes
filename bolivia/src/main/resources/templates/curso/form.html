@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{partials/head :: head}"></head>
+<body>
+<div th:insert="~{partials/nav :: nav}"></div>
+
+<div class="container d-flex justify-content-center mt-5">
+  <div class="row w-100">
+    <div class="col-md-6 col-sm-12 m-auto">
+      <h2>Alta de Cursos</h2>
+      <div class="card py-4">
+        <form th:action="@{/curso/guardar}" th:object="${curso}" method="POST">
+          <div class="mb-2">
+          <input type="text" th:field="*{nombre}" placeholder="Curso" autocomplete="off" class="form-control">
+          </div>
+          <div class="mb-2">
+          <input type="text" th:field="*{duracion}" placeholder="Duracion" autocomplete="off" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

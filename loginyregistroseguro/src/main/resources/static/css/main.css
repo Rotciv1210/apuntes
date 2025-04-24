@@ -1,0 +1,46 @@
+body { 
+    background-color: rgb(37, 37, 37) ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+h1{
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+
+form{
+
+    border-radius: 20px;
+    background-color: white;
+    width: 30%;
+    margin: 0 auto;
+    border: 1px solid whitesmoke;
+    box-shadow: 4px 4px 4px 5px  rgba(0,0,0,0.5);
+    padding: 20px;
+}
+
+input{
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 5px 10px;
+    align-items: center;
+    border-color: white;
+    background-color: lightblue;
+    
+    
+}
+
+button:hover{
+  background-color: white;
+  border-color: white;
+}
