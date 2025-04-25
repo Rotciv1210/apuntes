@@ -23,7 +23,7 @@ public class UsuarioController {
     }
 
     //metodo de formulario
-    @GetMapping
+    @GetMapping("/alta")
     public String form(Model model){
 
         model.addAttribute("usuario", new Usuario());
@@ -38,6 +38,8 @@ public class UsuarioController {
        PasswordUtil.codificarPassword(usuario.getPassword());
 
        Usuario usuarioAlta = usuarioService.guardarUsuario(usuario,session);
+
+       session.setAttribute("usuario", usuario.getUsername());
 
        return "redirect:/usuario";
     }
@@ -55,6 +57,9 @@ public class UsuarioController {
 
         if(exito){
             flash.addFlashAttribute("exitoMensaje", "Usuario logeado con Exito");
+
+            session.setAttribute("usuario", usuario.getUsername());
+
             return "redirect:/usuario";
         }
         flash.addFlashAttribute("errorMensaje", "Usuario No VALIDO");

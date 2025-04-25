@@ -41,7 +41,7 @@ public class UsuarioService {
 
         //Creamos dos variables de sesion , una para el nombre de usuario y otra para el Rol
         session.setAttribute("username", usuarioAlta.getUsername());
-        session.setAttribute("rol",usuarioAlta.getRol());
+        session.setAttribute("rol",usuarioAlta.getRol().name());
 
         return usuarioAlta;
     }
@@ -55,15 +55,19 @@ public class UsuarioService {
         if(usuarioOptional.isPresent()){
 
             Usuario usuario = usuarioOptional.get();
-            session.setAttribute("username",usuario.getUsername());
-            session.setAttribute("rol",usuario.getRol().name());
-
+            session.setAttribute("Username", usuario.getUsername());
+            session.setAttribute("rol", usuario.getRol());
             LOG.info("Usuario dentro de la sesion", usuario.getUsername());
             return PasswordUtil.verificarPassword(passwordTextoPlano, usuario.getPassword());
 
         }
 
         return false;
+    }
+
+    public Usuario buscarUsuario(String username){
+
+        return usuarioRepo.findByUsername(username).get();
     }
 
 }
