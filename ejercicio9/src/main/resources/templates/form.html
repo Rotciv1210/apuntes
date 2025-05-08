@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Clientes</title>
+</head>
+<body>
+  <h1>Formulario de Clientes</h1>
+<div th:if="${success != null}">
+    <p th:text="${success}"></p>
+</div>
+
+
+  <form th:action="@{/form}" th:object="${cliente}" method="post">
+      <input type="text" th:field="*{nombre}" placeholder="Nombre" autocomplete="off"><br>
+      <input type="email" th:field="*{email}" placeholder="Email" autocomplete="off"><br>
+      <button type="submit">Guardar</button>
+  </form>
+</body>
+</html>

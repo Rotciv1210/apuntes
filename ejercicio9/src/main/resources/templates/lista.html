@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Clientes</title>
+</head>
+<body>
+<h1>Lista clientes</h1>
+
+<form th:action="@{/lista}" method="post" th:object="${cliente}">
+    <select th:field="*{id}">
+        <option value="">Selecciona un Cliente</option>
+        <option th:each="c : ${clientes}"
+                th:value="${c.id}"
+                th:text="${c.nombre + ' (' + c.email + ')'}">
+        </option>
+    </select><br>
+    <button type="submit">Ver Detalle</button>
+</form>
+
+
+</body>
+</html>
