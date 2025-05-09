@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form th:action="@{/operacion/sumar}" method="GET">
+        <input type="number" name="num1" placeholder="Número 1" autocomplete="off">
+        <input type="number" name="num2" placeholder="Número 2" autocomplete="off">
+        <br>
+        <button type="submit">Sumar</button>
+    </form>
+
+    <p th:text="${resultado}"></p>
+
+</body>
+</html>
