@@ -24,16 +24,13 @@ public class UsuarioController {
     }
 
     @PostMapping("/buscar")
-    public String procesarFormulario(@RequestParam(required = false) String nombre,
-                                     @RequestParam(required = false) String primerApellido,
+    public String procesarFormulario(@RequestParam(required = false) String query,
                                      Model model) {
 
         List<Usuario> resultados;
 
-        if (nombre != null && !nombre.isEmpty()) {
-            resultados = usuarioService.buscarporNombre(nombre);
-        } else if (primerApellido != null && !primerApellido.isEmpty()) {
-            resultados = usuarioService.buscarporPrimerApellido(primerApellido);
+        if (query != null && !query.trim().isEmpty()) {
+            resultados = usuarioService.buscarporNombreoApellido(query.trim());
         } else {
             resultados = List.of();
         }

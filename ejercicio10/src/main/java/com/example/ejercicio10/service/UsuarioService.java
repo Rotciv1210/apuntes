@@ -13,13 +13,9 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepo usuarioRepo;
 
-    public List<Usuario> buscarporNombre(String nombre){
 
-        return usuarioRepo.findByNombre(nombre);
-    }
+    public List<Usuario> buscarporNombreoApellido(String query){
 
-    public List<Usuario> buscarporPrimerApellido(String primerApellido){
-
-        return usuarioRepo.findByPrimerApellido(primerApellido);
+        return usuarioRepo.findByNombreContainingIgnoreCaseOrPrimerApellidoContainingIgnoreCase(query, query);
     }
 }
