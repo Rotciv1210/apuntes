@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Usuarios</title>
+</head>
+<body>
+<h2>Registro de usuarios</h2>
+
+<form th:action="@{/registro}" th:object="${usuario}" method="post">
+
+  <input type="text" th:field="*{username}" autocomplete="off" placeholder="Usuario"><br>
+  <input type="text" th:field="*{email}" autocomplete="off" placeholder="Email"><br>
+  <input type="radio" name="genero" th:value="MASCULINO" th:checked="${usuario.genero == 'MASCULINO'}">Masculino
+  <input type="radio" name="genero" th:value="FEMENINO" th:checked="${usuario.genero == 'FEMENINO'}">Femenino<br>
+  <div th:each="i: ${aficiones}">
+    <input type="checkbox" name="aficionID" th:value="${i.id}"><span th:text="${i.nombreAficion}"></span>
+  </div>
+  <button type="submit">Guardar</button>
+
+</form>
+
+
+</body>
+</html>
