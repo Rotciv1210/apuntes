@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Guardar Aulas</title>
+</head>
+<body>
+
+<div th:if="${success != null}">
+  <p th:text="${success}"></p>
+</div>
+<form th:action="@{/aula/alta}" th:object="${aula}" method="post">
+
+  <input type="text" th:field="*{nombre}" placeholder="Nombre" autocomplete="off"><br>
+  <button type="submit">Guardar</button>
+</form>
+
+</body>
+</html>
